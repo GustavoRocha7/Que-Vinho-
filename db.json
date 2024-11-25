@@ -1,0 +1,25 @@
+{
+    "equipments": [
+      {
+        "id": "1",
+        "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000022579-standing-front.png",
+        "model": "Tinto",
+        "title": "Portada Winemaker's Selection 2021", 
+        "price": 29439
+      },
+      {
+        "id": "2",
+        "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000024404-standing-front.png",
+        "model": "Branco",
+        "title": "Gran Delmio Gran Selección Blanco", 
+        "price": 120
+      },
+      {
+        "id": "3",
+        "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000023735-standing-front.png",
+        "model": "Rosé",
+        "title": "Viña de Los Andes Rosé 2024", 
+        "price": 400
+      }
+    ]
+}
