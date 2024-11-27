@@ -8,7 +8,7 @@ type ImagePreviewProps = {
 }
 
 export function ImagePreview({ showDescription = false, alt, image }: ImagePreviewProps) {
-    return <Box width="100%" height={!showDescription ? "280" : "200"} justifyContent="center" alignItems="center">
+    return <Box width="100%" height={!showDescription ? "200" : "300"} justifyContent="center" alignItems="center">
         <Image
             src={image}
             w="350px"

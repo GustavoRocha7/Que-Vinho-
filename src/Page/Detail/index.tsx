@@ -17,6 +17,7 @@ export function Detail() {
     const { equipmentId } = route.params as RouteParams
 
     const [equipment, setEquipment] = useState<CardProps>({} as CardProps)
+    const [toggleDescription, setToggleDescription] = useState(true)
 
     useEffect(() => {
         async function getEquipmentById() {
@@ -31,6 +32,10 @@ export function Detail() {
 
         getEquipmentById()
     }, []);
+
+    function handleToggleDescription (){
+        setToggleDescription((oldValue) => !oldValue)
+    }
 
     return (
         <>
@@ -47,15 +52,15 @@ export function Detail() {
                     bottom="0"
                 />
 
-                <ImagePreview showDescription={false} image={equipment.image} alt={equipment.title} />
+                <ImagePreview showDescription={toggleDescription} image={equipment.image} alt={equipment.title} />
             </Box>
 
 
-            {false ? (
+            {toggleDescription ? (
                 <Box
                     bg="primary.100" justifyContent="center" p="7" borderTopRadius={30} shadow={5} h="110px">
                     <HStack w="100%" justifyContent="space-between">
-                        <ButtonDetail title="Descrição" />
+                        <ButtonDetail title="Descrição" onPress={handleToggleDescription}/>
 
                         <ButtonDetail title="Ficha Tecnica" />
 
@@ -66,7 +71,7 @@ export function Detail() {
             ) : (<Box bg="primary.100" borderTopRadius={30} shadow={5} h="460px">
                 <Box pl="7" p="7" pt="7">
                     <HStack w="100%" justifyContent="space-between">
-                        <ButtonDetail title="Descrição" />
+                        <ButtonDetail title="Descrição" onPress={handleToggleDescription}/>
 
                         <ButtonDetail title="Ficha Tecnica" />
                     </HStack>
