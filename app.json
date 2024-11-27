@@ -13,17 +13,29 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.gurocha.QueVinho"
+      "package": "com.gurocha.QueVinho",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1e985da8-cdff-43c9-957d-b6174a2ecfc0"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1e985da8-cdff-43c9-957d-b6174a2ecfc0"
     }
   }
 }
