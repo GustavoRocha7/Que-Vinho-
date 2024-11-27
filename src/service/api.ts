@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://192.168.1.19:3000'
+    baseURL: 'https://que-vinho-gustavos-projects-16afdf91.vercel.app'
 })
 
 export default api;

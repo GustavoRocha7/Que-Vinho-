@@ -7,7 +7,7 @@ import { Gradient } from "./GRadient";
 type Props = TouchableOpacityProps & {
     children: React.ReactNode;
     isGradient?: boolean;
-};
+} & TouchableOpacityProps;
 
 export function GradientSquareButton({ isGradient = true, children, ...rest }: Props) {
     const { colors } = useTheme();
