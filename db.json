@@ -5,21 +5,29 @@
         "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000022579-standing-front.png",
         "model": "Tinto",
         "title": "Portada Winemaker's Selection 2021", 
-        "price": 29439
+        "price": 29439,
+        "description": "Sua sede está situada na Quinta de Porto Franco, a 60 km do centro-norte de Lisboa e a 20 km do oceano Atlântico, onde o produtor conta com uma agricultura sustentável e aproveita a tipicidade de cada terroir e as especificidades de cada casta para elaborar os seus exemplares. Não à toa, a DFJ Vinhos foi nomeada como uma das 5 Melhores Vinícolas Europeias de 2017 pela revista Wine Enthusiast.",
+        "category": "Tinto"
+        
       },
       {
         "id": "2",
         "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000024404-standing-front.png",
         "model": "Branco",
+        "description": "“Alcançar a excelência da produção do vinho em Portugal, transformando a riqueza e a variedade das castas portuguesas em rótulos da mais alta qualidade” - esta é a missão da DFJ Vinhos segundo o seu proprietário e enólogo-chefe, José Neiva Correia. Fundada em 1998, a vinícola possui 250 hectares de quintas para o cultivo de uvas majoritariamente localizados nas regiões vitivinícolas de Lisboa, Tejo, Douro e Alentejo. Sua sede está situada na Quinta de Porto Franco, a 60 km do centro-norte de Lisboa e a 20 km do oceano Atlântico, onde o produtor conta com uma agricultura sustentável e aproveita a tipicidade de cada terroir e as especificidades de cada casta para elaborar os seus exemplares. Não à toa, a DFJ Vinhos foi nomeada como uma das 5 Melhores Vinícolas Europeias de 2017 pela revista Wine Enthusiast.",
         "title": "Gran Delmio Gran Selección Blanco", 
         "price": 120
+        ,
+        "category": "Branco"
       },
       {
         "id": "3",
         "image": "https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000023735-standing-front.png",
         "model": "Rosé",
+        "description": "“Alcançar a excelência da produção do vinho em Portugal, transformando a riqueza e a variedade das castas portuguesas em rótulos da mais alta qualidade” - esta é a missão da DFJ Vinhos segundo o seu proprietário e enólogo-chefe, José Neiva Correia. Fundada em 1998, a vinícola possui 250 hectares de quintas para o cultivo de uvas majoritariamente localizados nas regiões vitivinícolas de Lisboa, Tejo, Douro e Alentejo. Sua sede está situada na Quinta de Porto Franco, a 60 km do centro-norte de Lisboa e a 20 km do oceano Atlântico, onde o produtor conta com uma agricultura sustentável e aproveita a tipicidade de cada terroir e as especificidades de cada casta para elaborar os seus exemplares. Não à toa, a DFJ Vinhos foi nomeada como uma das 5 Melhores Vinícolas Europeias de 2017 pela revista Wine Enthusiast.",
         "title": "Viña de Los Andes Rosé 2024", 
-        "price": 400
+        "price": 400,
+        "category": "Rosé"
       }
     ]
 }
