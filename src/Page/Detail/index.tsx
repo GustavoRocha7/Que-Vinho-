@@ -158,7 +158,7 @@ export function Detail() {
                                 bg="ocean.100"
                                 _pressed={{ bgColor: 'transparent' }}
                                 onPress={handleAddCart}>
-                                Adicionar ao crrinho
+                                Adicionar ao carrinho
                             </Button>
 
                         </HStack>

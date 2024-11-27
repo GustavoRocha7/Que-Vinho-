@@ -23,7 +23,7 @@ export function Cart() {
             <Box h="68%">
                 <Box mt="-20px">
                     <Header
-                        text="My Shopping cart"
+                        text="Carrinho de compras"
                         inverted
                         type={"goBack"}
                         handlePress={goBack}
@@ -31,11 +31,12 @@ export function Cart() {
                 </Box>
 
                 <ScrollView>
-                    {[0, 1, 2].map(() => (
+                    {[0, 1, 2].map((index) => (
                         <CartItem
-                            title="SMITH - Trade"
+                            key={index}  // Adicione a chave única
+                            title="Portada Winemaker's Selection 2021"
                             amount="2"
-                            image="https://i.imgur.com/zjgFbOM.png"
+                            image="https://res.cloudinary.com/evino/image/upload/q_auto:good,fl_progressive:steep,f_auto,dpr_1.0,h_434/v1/products/1000022579-standing-front.png"
                             price="200"
                         />
                     ))}
@@ -43,53 +44,23 @@ export function Cart() {
             </Box>
 
             <Box mb="50px">
-                <SectionFooterCart title="SubTotal" value="200" />
-                <SectionFooterCart title="Delivery Fee " value="0" />
-                <SectionFooterCart title="Total " value="250" />
+                <SectionFooterCart title="SubTotal " value="1200" />
+                <SectionFooterCart title="Frete " value="50" />
+                <SectionFooterCart title="Total " value="1250" />
 
                 <Center mt="5">
-                    <Box
-                        w="140px"
-                        h="40px"
-                        bg="primary.50"
+                    <Button
+                        w="149"
+                        h="43"
                         justifyContent="center"
-                        borderRadius="8px"
+                        alignItems="center"
+                        borderRadius="10px"
+                        shadow={5}
+                        bg="ocean.100"
+                        _pressed={{ bgColor: 'transparent' }}
                     >
-                        <SwipeableButton
-                            handleSwipe={() => {
-                                alert("oi");
-                            }}
-                            leftAction={
-                                <Box
-                                    w="140px"
-                                    justifyContent="center"
-                                    bg="primary.50"
-                                    borderRadius="8px"
-                                />
-                            }
-                        >
-                            <Button
-                                w="40px"
-                                height="40px"
-                                alignItems="center"
-                                justifyContent="center"
-                            >
-                                <Icon
-                                    as={AntDesign}
-                                    name="right"
-                                    color="white"
-                                />
-                            </Button>
-                        </SwipeableButton>
-                        <Text
-                            zIndex="-1"
-                            color="white"
-                            left="50px"
-                            position="absolute"
-                        >
-                            Checkout
-                        </Text>
-                    </Box>
+                        Finalizar pedido
+                    </Button>
                 </Center>
             </Box>
         </Box>
