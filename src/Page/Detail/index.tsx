@@ -8,6 +8,8 @@ import { CardProps } from "../Home";
 import rectangle from "../../img/img/rectangle.png"
 import { ImagePreview } from "../../atomic/atoms/ImagePreview";
 import { ButtonDetail } from "../../atomic/atoms/ButtonDetail";
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import { transform } from "@babel/core";
 type RouteParams = {
     equipmentId: string;
 }
@@ -18,6 +20,8 @@ export function Detail() {
 
     const [equipment, setEquipment] = useState<CardProps>({} as CardProps)
     const [toggleDescription, setToggleDescription] = useState(true)
+
+    const cardOffset = useSharedValue(460)
 
     useEffect(() => {
         async function getEquipmentById() {
@@ -33,9 +37,34 @@ export function Detail() {
         getEquipmentById()
     }, []);
 
-    function handleToggleDescription (){
+    function handleToggleDescription() {
         setToggleDescription((oldValue) => !oldValue)
     }
+
+    function handleAnimatedToggle() {
+        handleToggleDescription()
+
+        if (toggleDescription) {
+            cardOffset.value = withTiming(1, {
+                duration: 900
+            })
+        } else {
+            cardOffset.value = withTiming(460, {
+                duration: 900
+            })
+        }
+
+    }
+
+    const animatedStyle = useAnimatedStyle(() => {
+        return{
+            transform: [
+                {
+                    translateY: cardOffset.value,
+                }
+            ],
+        };
+    });
 
     return (
         <>
@@ -59,60 +88,63 @@ export function Detail() {
             {toggleDescription ? (
                 <Box
                     bg="primary.100" justifyContent="center" p="7" borderTopRadius={30} shadow={5} h="110px">
-                    <HStack w="100%" justifyContent="space-between">
-                        <ButtonDetail title="Descrição" onPress={handleToggleDescription}/>
+                    <HStack w="100%" justifyContent="center">
+                        <ButtonDetail title="Descrição" onPress={handleAnimatedToggle} />
 
-                        <ButtonDetail title="Ficha Tecnica" />
+                        
 
 
 
                     </HStack>
                 </Box>
-            ) : (<Box bg="primary.100" borderTopRadius={30} shadow={5} h="460px">
-                <Box pl="7" p="7" pt="7">
-                    <HStack w="100%" justifyContent="space-between">
-                        <ButtonDetail title="Descrição" onPress={handleToggleDescription}/>
+            ) : (
+                <Animated.View style={animatedStyle}>
+                    <Box bg="primary.100" borderTopRadius={30} shadow={5} h="460px">
+                        <Box pl="7" p="7" pt="7">
+                            <HStack w="100%" justifyContent="center">
+                                <ButtonDetail title="Descrição" onPress={handleAnimatedToggle} />
 
-                        <ButtonDetail title="Ficha Tecnica" />
-                    </HStack>
-                    <Box mt="30">
-                        <Text bold color="white" fontSize="17">{equipment.title}</Text>
-                        <Text bold color="white" opacity="0.6" mt="4" fontSize="12">{equipment.description}</Text>
+                                
+                            </HStack>
+                            <Box mt="30">
+                                <Text bold color="white" fontSize="17">{equipment.title}</Text>
+                                <Text bold color="white" opacity="0.6" mt="4" fontSize="12">{equipment.description}</Text>
+                            </Box>
+
+
+                        </Box>
+                        <HStack
+                            position="absolute"
+                            bg="primary.200"
+                            borderTopRadius={30}
+                            justifyContent="space-between"
+                            shadow={5}
+                            h={100}
+                            w={"100%"}
+                            mt="30"
+                            alignItems="center"
+                            p="7"
+                            bottom={0}
+                        >
+                            <Text bold color="ocean.200" fontSize="17">R$ {equipment.price}</Text>
+
+
+                            <Button
+                                w="149"
+                                h="43"
+                                justifyContent="center"
+                                alignItems="center"
+                                borderRadius="10px"
+                                shadow={5}
+                                bg="ocean.100"
+                                _pressed={{ bgColor: 'transparent' }}
+                                onPress={() => { }}>
+                                Adicionar ao carrinho
+                            </Button>
+
+                        </HStack>
                     </Box>
-
-
-                </Box>
-                <HStack
-                    position="absolute"
-                    bg="primary.200"
-                    borderTopRadius={30}
-                    justifyContent="space-between"
-                    shadow={5}
-                    h={100}
-                    w={"100%"}
-                    mt="30"
-                    alignItems="center"
-                    p="7"
-                    bottom={0}
-                >
-                    <Text bold color="ocean.200" fontSize="17">R$ {equipment.price}</Text>
-
-
-                    <Button
-                        w="149"
-                        h="43"
-                        justifyContent="center"
-                        alignItems="center"
-                        borderRadius="10px"
-                        shadow={5}
-                        bg="ocean.100"
-                        _pressed={{ bgColor: 'transparent' }}
-                        onPress={() => { }}>
-                        Adicionar ao carrinho
-                    </Button>
-
-                </HStack>
-            </Box>
+                </Animated.View>
             )}
 
         </>
